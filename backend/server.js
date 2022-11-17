@@ -29,7 +29,7 @@ app.use(passport.session());
 
 
 //Connecting to MongoDB using mongoose
-mongoose.connect('mongodb://localhost:27017/MovieGoDB', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://tharindudsandeepa:tds123@cluster0.rhkiz.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true});
 mongoose.set("useCreateIndex", true);
 
 //Defining Schemas

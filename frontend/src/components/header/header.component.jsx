@@ -22,7 +22,7 @@ const Header = (props) => {
     return (
         <div className='header'>
             <div className='container logo-container'>
-                <Link to='/' className='logo'>MovieGo</Link>
+                <Link to='/' className='logo'>Movie Hub</Link>
             </div>
             <div className='container options'>
                 <Link to='/nowshowing' className='option'>Now Showing</Link>
