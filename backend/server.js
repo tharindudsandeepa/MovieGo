@@ -11,10 +11,7 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var app = express();
 
 //app.set('view engine', 'ejs');
-app.use(cors({
-    origin: "http://localhost:3000", // restrict calls to those this address
-    credentials: true,
-}));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -29,7 +26,7 @@ app.use(passport.session());
 
 
 //Connecting to MongoDB using mongoose
-mongoose.connect('mongodb+srv://tharindudsandeepa:tds123@cluster0.rhkiz.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://tharindudsandeepa:t123@cluster0.rhkiz.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set("useCreateIndex", true);
 
 //Defining Schemas
@@ -138,5 +135,6 @@ router.get('/logout', function(req, res){
 
 app.use('/api', router);
 
-app.listen(3001);
-console.log("Listening to port 3001\n");
+app.listen(3001, () => console.log(`Server started on port 3001`));
+
+//console.log("Listening to port 3001\n");
